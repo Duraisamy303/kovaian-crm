@@ -1,10 +1,4 @@
 import React, { useState } from "react";
-import {
-  UilEnvelope,
-  UilClipboardNotes,
-  UilFile,
-  UilUser,
-} from "@iconscout/react-unicons";
 import "./LeadDetails.scss";
 import Profile from "../../assets/profile.png";
 import UserInfo from "../../assets/UserInfo.svg";
@@ -17,6 +11,18 @@ import PipelineCards from "../../components/Notes/Notes";
 import FeedbackCards from "../../components/Social/Socialcards";
 import SquareArrowRightUp from "../../assets/SquareArrowRightUp.svg";
 import UserCheckRounded from "../../assets/UserCheckRounded.svg";
+import UserIn from "../../assets/UserIn.svg";
+import LetterAc from "../../assets/Letter.svg";
+import SocialIn from "../../assets/SocialIn.svg";
+import EmailIn from "../../assets/emailIn.svg";
+import NoteIn from "../../assets/NoteIn.svg";
+import UploadSquare from "../../assets/UploadSquare.svg";
+import plusIn from "../../assets/plusIn.svg";
+import ShieldUser from "../../assets/ShieldUser.svg";
+import DocumentText from "../../assets/DocumentText.svg";
+import Vectors from "../../assets/Vectors.svg";
+import EmailAc from "../../assets/EmailAc.svg";
+import UserAc from "../../assets/UserAc.svg";
 import AttachmentCards from "../../components/Attachment/Attachment";
 import Activity from "../../components/Activity/Activity";
 import LeadTable from "./DataTable";
@@ -72,14 +78,45 @@ const LeadDetails = () => {
     {
       id: "lead-info",
       name: "Lead Info",
-      icon: <UilUser />,
+      inActive: UserIn,
       active: true,
+      Active: UserAc,
     },
-    { id: "notes", name: "Notes", icon: <UilClipboardNotes />, count: 6 },
-    { id: "attachments", name: "Attachments", icon: <UilFile />, count: 5 },
-    { id: "activities", name: "Activities", icon: <UilFile />, count: 8 },
-    { id: "emails", name: "Emails", icon: <UilEnvelope />, count: 8 },
-    { id: "social", name: "Social", icon: <UilEnvelope />, count: 3 },
+    {
+      id: "notes",
+      name: "Notes",
+      inActive: NoteIn,
+      count: 6,
+      Active: DocumentText,
+    },
+    {
+      id: "attachments",
+      name: "Attachments",
+      inActive: UploadSquare,
+      count: 5,
+      Active: EmailAc,
+    },
+    {
+      id: "activities",
+      name: "Activities",
+      inActive: plusIn,
+      count: 8,
+      Active: Vectors,
+    },
+    {
+      id: "emails",
+      name: "Emails",
+      inActive: EmailIn,
+      count: 8,
+      Active: LetterAc,
+    },
+    {
+      id: "social",
+      name: "Social",
+      inActive: SocialIn,
+      count: 3,
+      Active: ShieldUser,
+    },
   ];
 
   const additionalInfo = [
@@ -310,7 +347,10 @@ const LeadDetails = () => {
                   }`}
                   onClick={() => setActiveMenu(item.id)}
                 >
-                  <div className="menu-icon">{item.icon}</div>
+                  <img
+                    className="menu-icon"
+                    src={activeMenu === item.id ? item?.Active : item.inActive}
+                  />
                   <span className="menu-name">{item.name}</span>
                   {item.count > 0 && (
                     <span className="menu-count">{item.count}</span>
