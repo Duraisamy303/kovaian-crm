@@ -106,6 +106,7 @@ const EmailTable: React.FC = () => {
           <table className="email-comm-table">
             <thead className="email-comm-table-header">
               <tr>
+
                 <th className="email-col-subject">Subject</th>
                 <th className="email-col-to">To</th>
                 <th className="email-col-date">Date & Time</th>
@@ -120,23 +121,7 @@ const EmailTable: React.FC = () => {
                       <span className="email-subject-text">
                         {email.subject}
                       </span>
-                      {email.hasAttachment && (
-                        <span
-                          className="email-attachment-indicator"
-                          title="Has attachment"
-                        >
-                          <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
-                          </svg>
-                        </span>
-                      )}
+                      
                     </div>
                   </td>
                   <td className="email-col-to">
@@ -163,23 +148,7 @@ const EmailTable: React.FC = () => {
             <div className="email-comm-card-header">
               <div className="email-comm-card-subject">
                 <span className="email-subject-text">{email.subject}</span>
-                {email.hasAttachment && (
-                  <span
-                    className="email-attachment-indicator"
-                    title="Has attachment"
-                  >
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
-                    </svg>
-                  </span>
-                )}
+               
               </div>
               {getStatusBadge(email.status)}
             </div>

@@ -45,7 +45,7 @@
 
   @media (max-width: 768px) {
     justify-content: stretch;
-    
+
     .email-comm-btn {
       flex: 1;
       justify-content: center;
@@ -114,21 +114,21 @@
   width: 100%;
   overflow-x: auto;
   overflow-y: visible;
-  
+
   &::-webkit-scrollbar {
     height: 6px;
   }
-  
+
   &::-webkit-scrollbar-track {
     background: #f1f5f9;
     border-radius: 0 0 8px 0;
   }
-  
+
   &::-webkit-scrollbar-thumb {
     background: #cbd5e1;
     border-radius: 3px;
   }
-  
+
   &::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
   }
@@ -151,12 +151,12 @@
   left: 0;
   z-index: 10;
   background: #f8fafc;
-  
+
   tr {
     th {
       padding: 16px 12px;
       text-align: left;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
       color: #374151;
       white-space: nowrap;
@@ -164,29 +164,36 @@
       background: #f8fafc;
       position: sticky;
       top: 0;
-      
+
       &.email-col-subject {
-        width: 40%;
+        // width: 40%;
         min-width: 250px;
         padding-left: 24px;
         left: 0;
         z-index: 11;
+        background-color: #D6E2EE;
       }
 
       &.email-col-to {
-        width: 25%;
+        // width: 25%;
         min-width: 150px;
+        background-color: #D6E2EE;
+
       }
 
       &.email-col-date {
-        width: 20%;
+        // width: 20%;
         min-width: 150px;
+        background-color: #D6E2EE;
+
       }
 
       &.email-col-status {
         width: 15%;
         min-width: 100px;
         padding-right: 24px;
+        background-color: #D6E2EE;
+
       }
     }
   }
@@ -213,7 +220,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     background: white;
-    
+
     &.email-col-subject {
       padding-left: 24px;
       position: sticky;
@@ -221,7 +228,7 @@
       background: white;
       z-index: 1;
     }
-    
+
     &.email-col-status {
       padding-right: 24px;
     }
@@ -403,6 +410,8 @@
 
   .email-comm-mobile-view {
     display: flex;
+    background: white;
+    border-radius: 10px;
   }
 }
 
@@ -442,6 +451,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
