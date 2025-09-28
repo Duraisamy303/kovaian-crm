@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  &.sidebar-collapsed {
+    margin-left: 85px;
+  }
+  
+  &.sidebar-expanded {
+    margin-left: 280px;
+  }
+}
+
+.page-content {
+  flex: 1;
+  padding: 0rem 2rem;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+  
+  .page-content {
+    padding: 1.5rem 1rem;
+  }
+}
